@@ -48,7 +48,9 @@ export default {
   data()
   {
     return {
-      block: {}
+      block: {},
+      hPercent: 100,
+      maxAddings: 20,
     }
   },
   mounted()
@@ -71,14 +73,14 @@ export default {
     discontPrice()
     {
       let count = this.block.count || 1
-      return  ((100 - +this.block.discont) * ( +count * +this.block.price) / 100) 
+      return  ((this.hPercent - +this.block.discont) * ( +count * +this.block.price) / this.hPercent) 
     }
   },
   methods:
   {
     addToBasket()
     {
-      if( this.block.count === 20 )
+      if( this.block.count === this.maxAddings )
         return
       this.block.count+=1
       this.$store.dispatch('catalog/incrementCount', this.block )

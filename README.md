@@ -1,6 +1,9 @@
 # smart-com
 npm run serve - frontend
-npm run back - backend
+
+
+обычный магаз
+можно добавить до 20 пицц
 ## Project setup
 ```
 npm install

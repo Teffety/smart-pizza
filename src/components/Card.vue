@@ -37,7 +37,9 @@ export default {
   data()
   {
     return {
-      block: {}
+      block: {},
+      hPercent: 100,
+      maxAddings: 20,
     }
   },
 
@@ -61,7 +63,7 @@ export default {
     discontPrice()
     {
       let count = this.block.count || 1;
-      let summ = ((100 - +this.block.discont) * ( +count * +this.block.price) / 100) 
+      let summ = ((this.hPercent - +this.block.discont) * ( +count * +this.block.price) / this.hPercent) 
       return `${summ}` 
     }
   },
@@ -70,7 +72,7 @@ export default {
     // увеличиваем счетчик и добавляем в корзину
     addToBasket()
     {
-      if( this.block.count === 20 )
+      if( this.block.count === this.maxAddings )
         return
       this.block.count+=1
       this.$store.dispatch('catalog/incrementCount', this.block )
