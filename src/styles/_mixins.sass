@@ -1,0 +1,22 @@
+=media ($max: false, $min: false)
+	@if ($max and $min)
+		@media only screen and (max-width: $max) and (min-width: $min)
+			@content
+	@else if ($max)
+		@media only screen and (max-width: $max)
+			@content
+	@else if ($min)
+		@media only screen and (min-width: $min)
+			@content
+
+=keyframes($keyframes)
+	@-webkit-keyframes #{$keyframes}
+		@content
+	@-moz-keyframes #{$keyframes} 
+		@content
+	@-o-keyframes #{$keyframes}
+		@content
+	@keyframes #{$keyframes}
+		@content
+
+

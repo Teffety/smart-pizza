@@ -1,0 +1,55 @@
+.catalog
+  &-list
+    display: flex
+    flex-flow: row wrap
+    align-items: center
+    justify-content: space-between
+    margin-top: 30px
+    +media(900px)
+      justify-content: center
+  &-filter
+    display: flex
+    justify-content: center
+    align-items: center
+    &-clear
+      margin: 0px 15px 0px 0px
+      border: 1px solid transparent
+      cursor: pointer
+      transition-duration: .5s
+      &:hover
+        border-bottom-color: $text-color-active
+
+  &-svg
+    position: relative
+    margin-left: 10px
+    width: 10px
+    height: 7px
+    cursor: pointer
+    & svg
+      position: absolute
+      transition-duration: .5s
+      right: 0px
+      fill: $text-color
+  &-rotate
+    transition-duration: .5s
+    transform: rotate(180deg)
+  &-fill__active
+    fill: $text-color-active !important
+  &-toggle
+    position: absolute
+    height: 15px
+    top: -8px
+    left: 15px
+    margin: 0
+    white-space: nowrap
+  &-input
+    min-height: 25px
+    outline: none
+    padding: 2px 5px
+    border: 1px solid transparent
+    border-bottom-color: $text-color
+    transition-duration: .5s
+    color: $text-color
+    &:focus
+      border-radius: 4px
+      border-color: $text-color-active

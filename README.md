@@ -1,5 +1,6 @@
 # smart-com
-
+npm run serve - frontend
+npm run back - backend
 ## Project setup
 ```
 npm install

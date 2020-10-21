@@ -1,0 +1,84 @@
+
+.card
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  flex-flow: column nowrap
+  width: calc( 100% / 5
+  min-width: 250px
+  height: 250px
+  padding: 5px
+  margin: 15px
+  &-img
+    position: absolute
+    width: 250px
+    height: 250px
+    border-radius: 50%
+    background-color: rgba(0,0,0,.2)
+    background-origin: border-box
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+    z-index: -1
+  
+  &-discription
+    opacity: 0
+    max-height: 200px
+    cursor: pointer
+    user-select: none
+    overflow-y: auto
+    background-color: rgba(255, 255,255 ,.5 )
+    padding: 5px
+    border-radius: 4px 4px 0px 0px
+    transition-duration: .5s
+    &:hover
+      opacity: 1
+  &-data
+    background-color: rgba(255, 255,255 ,.5 )
+    border-radius: 8px 8px 0px 0px
+    width: calc( 100% - 20px)
+    height: 50px
+    border-bottom: 1px solid rgba(0, 0, 0, .2)
+  &-data, &-actions
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+    padding: 0px 10px
+  &-actions
+    &__btns
+      width: 20px
+      height: 20px
+      cursor: pointer
+      user-select: none
+    &__count
+      width: 50px
+      user-select: none
+  &-empty
+    background-color: $text-color
+    color: white
+    opacity: 1
+
+  &-discont
+    & .card-price
+      position: relative
+      
+      &::before
+        content: 'NEW'
+        position: absolute
+        top: -23px
+        left: 0px
+        color: #ff3939f3
+        background-color: white
+    &::after
+      content: 'Discont!'
+      position: absolute
+      top: -15px
+      left: 0px
+      width: 100%
+      padding: 5px auto
+      border-radius: 8px 8px 0px 0px 
+      background-color: #ff3939c2
+      color: white
+      font-size: 13px
